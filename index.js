@@ -8,8 +8,12 @@ var catRoute = require("./routes/category")
 var paymentRoute = require("./routes/payment")
 
 //////////magdy
+<<<<<<< HEAD
 const copounsRoutes = require("./routes/copouns")
 
+=======
+const copounsRoutes=require("./routes/copouns")
+>>>>>>> 69744d62cebeb46db2472eaf926dbf1fdb8c9c89
 /// Fatma
 const ordersRoutes = require("./routes/orders")
 const userRouters = require("./routes/user")
@@ -35,6 +39,12 @@ app.use("/copouns", copounsRoutes)
 app.use("/orders", ordersRoutes)
 app.use("/users", userRouters)
 app.use("/cart", cartRouts)
+
+/// Fatma 
+app.use("/orders", ordersRoutes)
+app.use("/users", userRouters)
+app.use("/cart", cartRouts)
+
 
 app.get("/", (req, res) => res.send("Hello World!"));
 app.listen(port, () => console.log(` app listening`));
