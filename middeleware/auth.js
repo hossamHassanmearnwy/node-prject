@@ -29,4 +29,29 @@ jwt.verify(authorization, process.env.SECRET,function(err,decoded){
 
 
 
-module.exports={auth}
+
+function isAdmin(req, res, next) {
+    auth(req, res, function () {
+        if (req.userData.isAdmin === true) {
+            next();
+        } else {
+            return res.status(401).json("not Admin");
+        }
+    });
+}
+function isUser(req, res, next) {
+    auth(req, res, async function () {
+        if (req.userData.isAdmin === false) {
+            const reqUser = await User.findById(req.userData.userId);
+            if (reqUser) {
+                next();
+            }
+        } else {
+            return res.status(401).json("not user");
+        }
+    });
+}
+
+
+
+module.exports = { auth, isAdmin, isUser }
