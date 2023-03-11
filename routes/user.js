@@ -1,7 +1,7 @@
 const express = require("express")
 var router = express.Router();
 const userController = require("../controllers/userControl")
-const { isAdmin} = require("../middlewares/auth");
+const { isAdmin } = require("../middeleware/auth");
 
 
 //create new user (register)
@@ -26,4 +26,4 @@ router.get("/logout/:id", userController.Logout);
 
 
 
-module.exports=router
+module.exports = router
