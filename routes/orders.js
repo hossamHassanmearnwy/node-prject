@@ -1,11 +1,11 @@
 const express = require("express")
 const router = express.Router();
 const orderModel = require("../models/orderModel");
-<<<<<<< HEAD
+////// HEAD
 const { auth, isAdmin, isUser } = require("../middeleware/auth");
-=======
-const { auth,isAdmin,isUser } = require("../middeleware/auth");
->>>>>>> 69744d62cebeb46db2472eaf926dbf1fdb8c9c89
+////////
+// const { auth,isAdmin,isUser } = require("../middeleware/auth");
+// >>>>>>> 69744d62cebeb46db2472eaf926dbf1fdb8c9c89
 const orderController = require("../controllers/ordersControl");
 
 
