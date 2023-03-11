@@ -47,7 +47,7 @@ const ProdutsSchema = mongoose.Schema({
         type: String
     },
     Images: [{
-        type: String
+        type: Buffer
     }],
     // Images : { type : Array , "default" : [] }
     Capacity: {

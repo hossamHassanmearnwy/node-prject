@@ -121,5 +121,7 @@ function gettAllByReview(id) {
 function deleteProductById(id) {
     return ProductsModel.deleteOne({ _id: id })
 }
+
+
 //get all by cat name
 module.exports = { createProduct, updateProductById, getAll, gettAllById, deleteProductById, gettAllByCat, gettAllByOffer, gettAllByReview }
