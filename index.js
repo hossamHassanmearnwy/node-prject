@@ -9,6 +9,10 @@ var paymentRoute = require("./routes/payment")
 
 //////////magdy
 const copounsRoutes=require("./routes/copouns")
+/// Fatma
+const ordersRoutes = require("./routes/orders")
+const userRouters = require("./routes/user")
+const cartRouts = require("./routes/cart")
 
 const app = express();
 const port = process.env.PORT 
@@ -25,6 +29,12 @@ app.use('/payment', paymentRoute)
 
 //magdy 
 app.use("/copouns",copounsRoutes)
+
+/// Fatma 
+app.use("/orders", ordersRoutes)
+app.use("/users", userRouters)
+app.use("/cart", cartRouts)
+
 
 app.get("/", (req, res) => res.send("Hello World!"));
 app.listen(port, () => console.log(` app listening`));
