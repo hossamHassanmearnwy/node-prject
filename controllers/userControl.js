@@ -115,8 +115,8 @@ async function login(req,res){
 //ADMIN LOGin
 async function adminLogin(req, res, nex) {
    try {
-      const { emailAddress, password } = req.body;
-      var admin = await userModel.findOne({ email: emailAddress });
+      const { email, password } = req.body;
+      var admin = await userModel.findOne({ email }); // {email:email}
       if (admin) {
          var valid = bcrypt.compareSync(password, admin.password);
          if (valid) {
