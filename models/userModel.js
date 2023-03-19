@@ -44,8 +44,7 @@ const userSchema=mongoose.Schema({
     },
     phoneNumber:{
         type:Number,
-        minLength:11,
-        maxLength:11
+        length:11
     }
 
     },{timestamps:true}
