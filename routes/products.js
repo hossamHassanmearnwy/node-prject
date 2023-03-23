@@ -94,13 +94,11 @@ router.get("/Reviews/:id", async (req, res, next) => {
 
 //update
 router.patch("/:id", async (req, res, next) => {
-<<<<<<< HEAD
     var id = req.params.id
     var product=[req.body] //add status //{title:[]=[]}
-=======
   // var id = req.params.id
   // var {ItemName,review,offer,Price,Brand,Color,OnSale,PriceonSale}=req.body //add status //{title:[]=[]}
->>>>>>> Mohamed-Essam
+// >>>>>>> Mohamed-Essam
   try {
       //    var updtaedProdutcs=  await updateProductById(id,product)
       // var updtaedProdutcs=  await updateProductById(id,ItemName,review,offer,Price,Brand,Color,OnSale,PriceonSale)
