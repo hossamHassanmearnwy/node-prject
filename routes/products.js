@@ -91,8 +91,8 @@ router.get("/Reviews/:id", async (req, res, next) => {
 
 //update
 router.patch("/:id", async (req, res, next) => {
-  var id = req.params.id;
-  var product = [req.body]; //add status //{title:[]=[]}
+    var id = req.params.id
+    var product=[req.body] //add status //{title:[]=[]}
   try {
     //    var updtaedProdutcs=  await updateProductById(id,product)
     var updtaedProdutcs = await updateProductById(id, product);
