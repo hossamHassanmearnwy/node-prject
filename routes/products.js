@@ -1,8 +1,15 @@
 const express = require("express");
 const multer = require("multer");
+<<<<<<< Updated upstream
 var { createProduct, updateProductById, getAll, gettAllById, deleteProductById, gettAllByCat, gettAllByOffer, gettAllByReview } = require("../Controllers/products");
 var router = express.Router()
 const ProductsModel = require("../Models/products")
+=======
+
+const ProductsModel = require("../Models/products")
+
+
+>>>>>>> Stashed changes
 var {
   createProduct,
   updateProductById,
