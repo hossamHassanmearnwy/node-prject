@@ -16,6 +16,8 @@ jwt.verify(authorization, process.env.SECRET,function(err,decoded){
     if(decoded){
         req.username=decoded.username
         req.userId=decoded.userId
+        //F
+        req.isAdmin = decoded.isAdmin
         //console.log(decoded);
         next()
     }else{
@@ -29,20 +31,22 @@ jwt.verify(authorization, process.env.SECRET,function(err,decoded){
 
 
 
-
+// F
 function isAdmin(req, res, next) {
     auth(req, res, function () {
-        if (req.userData.isAdmin === true) {
+        if (req.isAdmin == false) {
+            req.isAdmin==true
             next();
         } else {
             return res.status(401).json("not Admin");
         }
     });
 }
+
 function isUser(req, res, next) {
     auth(req, res, async function () {
-        if (req.userData.isAdmin === false) {
-            const reqUser = await User.findById(req.userData.userId);
+        if (req.isAdmin === false) {
+            const reqUser = await User.findById(req.userId);
             if (reqUser) {
                 next();
             }
