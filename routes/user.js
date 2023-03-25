@@ -1,7 +1,7 @@
 const express = require("express")
 var router = express.Router();
 const userController = require("../controllers/userControl")
-const { isAdmin } = require("../middeleware/auth");
+const { isAdmin,auth } = require("../middeleware/auth");
 
 
 //create new user (register)
@@ -14,10 +14,10 @@ router.post("/login", userController.login);
 router.get("/", isAdmin, userController.getAllUsers);
 
 //get user by id
-router.get("/:id", userController.getUserById);
+router.get("/:id",auth, userController.getUserById);
 
 //delete by id
-router.delete("/:id", userController.deleteUser);
+router.delete("/:id",auth, userController.deleteUser);
 
 //Admin Login
 router.post("/log/admin", userController.adminLogin);
