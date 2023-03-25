@@ -21,7 +21,7 @@ async function getByID(req, res) {
     try {
         const orderId = req.params.id;
         const found = await orderModel.findById(orderId);
-        if (found.userId == req.userData.userId) {
+        if (found.userId == req.userId) {
             res.status(200).json(found);
         } else {
             res.status(422).json("this order not belong to you");
