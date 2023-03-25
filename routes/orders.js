@@ -16,7 +16,7 @@ router.use(auth)
 router.post("/", isUser, orderController.addOrder);
 
 // get by id
-router.get("/:id", auth, orderController.getByID);
+router.get("/:id", orderController.getByID);
 
 // get all orders
 router.get("/", isAdmin, orderController.getAllOrders);
