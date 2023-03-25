@@ -15,7 +15,7 @@ async function createUser(req, res,next) {
 
    try {
       var newUser = await userModel.create(req.body);
-      res.json(newUser);
+      res.status(200).json(newUser);
       next()
    } catch (err) {
       res.status(422).json(err.message);
@@ -92,7 +92,8 @@ async function login(req,res){
          var token = jwt.sign({
             // userId:user._id,
             // userName:user.name
-            data: { isAdmin: user.isAdmin, userId: user._id }
+             isAdmin: user.isAdmin,
+              userId: user._id 
          },
          SECRET,
          {
@@ -122,7 +123,8 @@ async function adminLogin(req, res, nex) {
          if (valid) {
             var token = jwt.sign(
                {
-                  data: { isAdmin: admin.isAdmin == true, adminId: admin.id },
+                   isAdmin: admin.isAdmin == true, 
+                  adminId: admin.id 
                },
                process.env.SECRET,
                {
