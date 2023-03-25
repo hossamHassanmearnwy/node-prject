@@ -7,7 +7,7 @@ const CartModel = require("../models/cartModel");
 async function getCart(req, res) {
 
     try {
-        const cart = await CartModel.find({ user: req.userData.userId }).populate("product", "Images Price  ");
+        const cart = await CartModel.find({ user: req.userId }).populate("product", "Images Price  ");
 
         const finalResult = cart.map((item) => {
             return {
@@ -50,12 +50,12 @@ async function getCartByUserID(req, res) {
 async function addToCart(req, res) {
     try {
         const product = req.body;
-        const found = await CartModel.findOne({ user: req.userData.userId, product: req.body.product });
+        const found = await CartModel.findOne({ user: req.userId, product: req.body.product });
         if (found) {
-            const update = await CartModel.findOneAndUpdate({ user: req.userData.userId, product: req.body.product }, product);
+            const update = await CartModel.findOneAndUpdate({ user: req.userId, product: req.body.product }, product);
             res.status(201).json(update);
         } else {
-            req.body.user = req.userData.userId;
+            req.body.user = req.userId;
             const savedProduct = await CartModel.create(product);
             res.status(201).json(savedProduct);
         }
