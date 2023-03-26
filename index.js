@@ -6,7 +6,7 @@ var ReviewsRoutes = require("./Routes/reviews")
 //Marina
 var catRoute = require("./routes/category")
 var paymentRoute = require("./routes/payment")
-
+const dbConnection = require('./db/mongoos');
 //////////magdy
 // <<<<<<< HEAD
 // const copounsRoutes = require("./routes/copouns")
@@ -22,7 +22,7 @@ const cartRouts = require("./routes/cart")
 
 const app = express();
 const port = process.env.PORT
-require("./db/mongoos");
+// require("./db/mongoos");
 
 //Essam
 app.use("/Products", ProductsRoutes)
