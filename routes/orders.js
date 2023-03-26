@@ -15,6 +15,9 @@ router.use(auth)
 // add order
 router.post("/", isUser, orderController.addOrder);
 
+// update order 
+router.put("/update/:id", isAdmin, orderController.updateOrder);
+
 // get by id
 router.get("/:id", orderController.getByID);
 
