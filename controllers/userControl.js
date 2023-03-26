@@ -27,6 +27,28 @@ async function createUser(req, res,next) {
 
 
 
+// update user by id 
+async function updateUser(req,res,next){
+   try {
+      var id = req.params.id;
+      const newData = req.body;
+      console.log(newData.password);
+      if (newData.password) {
+      var salt = await bcrypt.genSalt(10);
+         var hashedPass = bcrypt.hashSync(newData.password, salt);
+         newData.password = hashedPass;
+}
+      console.log(id);
+      await userModel.findByIdAndUpdate(id, { $set: newData });
+      res.status(200).json({ status: "success", newData });
+      
+      next()
+   } catch (err) {
+      res.status(500).json(err.message);
+   }
+}
+
+
 
 
 
