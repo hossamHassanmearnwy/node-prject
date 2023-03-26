@@ -16,6 +16,28 @@ async function addOrder(req, res) {
 }
 
 
+
+
+
+// update order by id 
+async function updateOrder(req, res) {
+    var id = req.params.id;
+    const newData = req.body;
+    try{
+        const updatedOrder = await orderModel.findByIdAndUpdate(id, { $set: newData })
+        res.status(200).json({ status: "order updated successfully", updatedOrder });
+
+    }catch(err){
+        res.status(500).json(err.message);
+    }
+}
+
+
+
+
+
+
+
 // get by id
 async function getByID(req, res) {
     try {
