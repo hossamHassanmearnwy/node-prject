@@ -3,7 +3,7 @@ const CartModel = require("../models/cartModel");
 
 
 
-
+// get
 async function getCart(req, res) {
 
     try {
@@ -28,6 +28,22 @@ async function getCart(req, res) {
         res.status(200).json(finalResult);
     } catch (err) {
         res.status(404).json({ error: err.message });
+    }
+}
+
+
+
+
+
+// update 
+async function updateQuantity(req, res) {
+    var id = req.params.id;
+    const newData = req.body;
+    try {
+        const updated = await CartModel.findByIdAndUpdate(id, newData);
+        res.status(200).json(updated);
+    } catch (err) {
+        res.status(405).json({ error: err.message });
     }
 }
 
