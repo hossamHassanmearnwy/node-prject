@@ -177,4 +177,4 @@ async function Logout(req, res, next) {
 }
 
 
-module.exports = { createUser, login, deleteUser,adminLogin, getUserById, Logout, getAllUsers }
+module.exports = { createUser, login, deleteUser,adminLogin, getUserById, Logout, getAllUsers , updateUser }
