@@ -36,10 +36,6 @@ app.use('/payment', paymentRoute)
 //magdy 
 app.use("/copouns", copounsRoutes)
 
-// Fatma 
-app.use("/orders", ordersRoutes)
-app.use("/users", userRouters)
-app.use("/cart", cartRouts)
 
 /// Fatma 
 app.use("/orders", ordersRoutes)
