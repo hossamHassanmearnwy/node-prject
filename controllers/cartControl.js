@@ -92,4 +92,4 @@ async function deleteFromCart(req, res) {
     }
 }
 
-module.exports = { getCart, getCartByUserID, addToCart, deleteFromCart };
+module.exports = { getCart, getCartByUserID, addToCart, deleteFromCart , updateQuantity };
