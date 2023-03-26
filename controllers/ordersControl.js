@@ -124,4 +124,4 @@ async function deleteById(req, res) {
 
 
 
-module.exports = { addOrder, getByID, deleteById, getAllOrders }
+module.exports = { addOrder, getByID, deleteById, getAllOrders , updateOrder }
