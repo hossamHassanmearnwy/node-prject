@@ -9,7 +9,7 @@ var {
 } = require("../controllers/category.js");
 const fs = require("fs");
 var catModel = require("../models/category");
-const { auth } = require("../middeleware/auth");
+const { auth } = require("../Middleware/auth");
 
 router.route("/").get(getCategories).post(createCategory);
 router

@@ -1,7 +1,6 @@
 const router = require("express").Router();
-const cartControl = require("../controllers/cartControl")
-const { isUser, isAdmin } = require("../middeleware/auth");
-
+const cartControl = require("../controllers/cartControl");
+const { isUser, isAdmin } = require("../Middleware/auth");
 
 // Get
 router.get("/", isUser, cartControl.getCart);
@@ -17,6 +16,5 @@ router.put("/update/:id", isUser, cartControl.updateQuantity);
 
 // DELETE CART
 router.delete("/:id", isUser, cartControl.deleteFromCart);
-
 
 module.exports = router;
