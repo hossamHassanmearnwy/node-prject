@@ -1,7 +1,7 @@
 const express = require("express");
 //Essam
 require('dotenv').config()
-console.log(process.env)
+console.log(`process.env`)
 var ProductsRoutes = require("./Routes/products");
 var OffersRoutes = require("./Routes/offers");
 var ReviewsRoutes = require("./Routes/reviews");
