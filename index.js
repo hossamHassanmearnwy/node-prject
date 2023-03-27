@@ -1,5 +1,7 @@
 const express = require("express");
 //Essam
+require('dotenv').config()
+console.log(process.env)
 var ProductsRoutes = require("./Routes/products");
 var OffersRoutes = require("./Routes/offers");
 var ReviewsRoutes = require("./Routes/reviews");
@@ -7,6 +9,7 @@ var ReviewsRoutes = require("./Routes/reviews");
 var catRoute = require("./routes/category");
 var paymentRoute = require("./routes/payment");
 const dbConnection = require("./db/mongoos");
+dbConnection();
 //////////magdy
 // <<<<<<< HEAD
 // const copounsRoutes = require("./routes/copouns")
@@ -40,5 +43,5 @@ app.use("/orders", ordersRoutes);
 app.use("/users", userRouters);
 app.use("/cart", cartRouts);
 
-// app.get("/", (req, res) => res.send("Hello World!"));
+// app.get("/translate", (req, res) => res.sendFile("Hello World!"));
 app.listen(port, () => console.log(` app listening in port ${port}`));

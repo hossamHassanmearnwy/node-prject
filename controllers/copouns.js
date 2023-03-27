@@ -1,24 +1,11 @@
-const copounsModel=require("../models/copouns")
+const copounsModel = require("../models/copouns");
 
-
-
-function createCopouns(copouns){
-  return copounsModel.create(copouns)
+function createCopouns(copouns) {
+  return copounsModel.create(copouns);
 }
 
-
-
-function getAllcopouns(){
-  return todosModel.find()
-
+function getAllcopouns(copouns) {
+  return copounsModel.find(copouns);
 }
 
-
-
-
-
-
-
-
-
-module.exports={createCopouns,getAllcopouns}
+module.exports = { createCopouns, getAllcopouns };
