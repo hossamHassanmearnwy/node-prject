@@ -7,7 +7,7 @@ const { isAdmin,auth } = require("../middeleware/auth");
 //create new user (register)
 router.post("/register", userController.createUser);
 
-//put
+// put / update
 router.put("/update/:id", userController.updateUser);
 
 //login

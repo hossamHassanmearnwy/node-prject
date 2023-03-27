@@ -3,7 +3,7 @@ const cartControl = require("../controllers/cartControl")
 const { isUser, isAdmin } = require("../middeleware/auth");
 
 
-// get
+// Get
 router.get("/", isUser, cartControl.getCart);
 
 // GET CART BY USER ID
